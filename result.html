@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IP Result</title>
+</head>
+<body>
+
+<h2>IP Investigation Result</h2>
+
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% else %}
+    <p><b>IP:</b> {{ data.query }}</p>
+    <p><b>Country:</b> {{ data.country }}</p>
+    <p><b>Region:</b> {{ data.regionName }}</p>
+    <p><b>City:</b> {{ data.city }}</p>
+    <p><b>ISP:</b> {{ data.isp }}</p>
+    <p><b>Latitude:</b> {{ data.lat }}</p>
+    <p><b>Longitude:</b> {{ data.lon }}</p>
+<p>
+<a href="https://www.google.com/maps?q={{ data.lat }},{{ data.lon }}" target="_blank">
+View Location on Google Maps
+</a>
+</p>
+{% endif %}
+
+<a href="/">Go Back</a>
+
+</body>
+</html>
